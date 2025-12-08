@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ゲームサーバー - The Afterlife Official Page</title>
+  <link rel="icon" href="bocchi.webp" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #2a2a2a;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      border-top: 1px solid #2a2a2a;
+      border-bottom: none;
+      margin-top: 3rem;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 16px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: rgba(42, 42, 42, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      transition: background 0.2s ease;
+      font-size: 1.1rem;
+    }
+    
+    .card:hover {
+      background: rgba(42, 42, 42, 0.8);
+    }
+    .flex {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .cover {
+      width: 64px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    input, button {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 6px;
+    }
+    input {
+      flex: 1;
+      background: #2a2a2a;
+      color: #e0e0e0;
+    }
+    button {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      cursor: pointer;
+      border: 1px solid #7c3aed;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    }
+    button:hover {
+      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+      border-color: #8b5cf6;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      color: rgb(165, 164, 164);
+    }
+  </style>
+</head>
+<body >
+  <header>
+    <h1>ゲームサーバー</h1>
+    <p>ここに、それぞれのIPアドレスと共にすべてのゲームサーバーがあります。</p>
+    <p style="color:rgb(99, 102, 241);">❔ これらのサーバーのいずれかでプレイする方法についてヘルプが必要な場合、各カテゴリ内で情報を見つけることができます。</p>
+    <div style="margin-top:1rem;">
+        <button onclick="window.location.href='index-ja.html'">ホームに戻る</button>
+    </div>
+  </header>
+
+<!-- Minecraft & Ark Servers -->
+<main style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: stretch; width: 100%; box-sizing: border-box; padding: 2rem 0;">
+    <section style="flex: 1 1 320px; min-width: 280px;">
+        <h2>Minecraftサーバー</h2>
+        <div class="card">
+            Cobblemonサーバー<br>
+            <span style="color:#aaa; display:block; margin-top:4px;">IP: theafterlifenetwork.serveminecraft.net:25567</span>
+            <button onclick="showTutorial('cobblemon')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 参加方法</button>
+        </div>
+        <div class="card">
+            Cisco's Adventure RPG [Dragonfyre]<br>
+            <span style="color:#aaa; display:block; margin-top:4px;">IP: theafterlifenetwork.serveminecraft.net:25566</span>
+            <button onclick="showTutorial('adventure')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 参加方法</button>
+        </div>
+    </section>
+
+    <section style="flex: 1 1 320px; min-width: 280px;">
+        <h2>Arkサーバー</h2>
+        <div class="card">
+            Ark: Survival Evolved<br>
+            <span style="color:#aaa">IP: theafterlifenetwork.serveminecraft.net:27015</span>
+            <button onclick="showTutorial('ark')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 参加方法</button>
+        </div>
+    </section>
+</main>
+
+  <footer>
+    © <span id="year"></span> The Afterlife Network. 全著作権所有。
+  </footer>
+
+  <script>
+    // --- Footer Year ---
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // --- Tutorial Function ---
+    function showTutorial(serverType) {
+      let tutorialContent = '';
+      
+      if (serverType === 'cobblemon') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+        <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 Cobblemonサーバーへの参加方法</h2>
+        
+        <h3 style="color: #ffffff; margin-top: 1.5rem;">🎮 Cobblemonサーバー:</h3>
+        <ol style="color: #e0e0e0; line-height: 1.6;">
+          <li><strong>モッドパック</strong> <code style="background: #333; padding: 2px 6px; border-radius: 4px;">Nizco's Cobblemon Adventures 2</code> を CurseForge または Modrinth から<strong>ダウンロード</strong>します（まだ持っていない場合）</li>
+          <li><strong>Minecraftを起動</strong>し、「マルチプレイ」に進みます</li>
+          <li><strong>「サーバー追加」をクリック</strong></li>
+          <li><strong>サーバーIPを入力:</strong> <code style="background: #333; padding: 2px 6px; border-radius: 4px;">theafterlifenetwork.serveminecraft.net:25567</code></li>
+          <li><strong>「完了」をクリック</strong>し、<strong>「サーバーに参加」</strong>します</li>
+        </ol>
+        
+        <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">参加できませんか？サーバーが起動しているか確認してください！</p>
+          </div>
+        `;
+      } else if (serverType === 'adventure') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+        <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 アドベンチャーRPGサーバーへの参加方法</h2>
+        
+        <h3 style="color: #ffffff; margin-top: 1.5rem;">🎮 Cisco's Adventure RPG [Dragonfyre]:</h3>
+        <ol style="color: #e0e0e0; line-height: 1.6;">
+          <li><strong>モッドパック</strong> <code style="background: #333; padding: 2px 6px; border-radius: 4px;">Cisco's Fantasy Medieval RPG [Dragonfyre]</code> を CurseForge または Modrinth から<strong>ダウンロード</strong>します（まだ持っていない場合）</li>
+          <li><strong>Minecraftを起動</strong>し、「マルチプレイ」に進みます</li>
+          <li><strong>「サーバー追加」をクリック</strong></li>
+          <li><strong>サーバーIPを入力:</strong> <code style="background: #333; padding: 2px 6px; border-radius: 4px;">theafterlifenetwork.serveminecraft.net:25566</code></li>
+          <li><strong>「完了」をクリック</strong>し、<strong>「サーバーに参加」</strong>します</li>
+        </ol>
+        
+        <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">参加できませんか？サーバーが起動しているか確認してください！</p>
+          </div>
+        `;
+      } else if (serverType === 'ark') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+        <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 Arkサーバーへの参加方法</h2>
+        
+        <h3 style="color: #ffffff; margin-top: 1.5rem;">🦖 Ark: Survival Evolved サーバー:</h3>
+        <ol style="color: #e0e0e0; line-height: 1.6;">
+          <li><strong>SteamからArk: Survival Evolved</strong>をダウンロードします</li>
+          <li><strong>ゲームを起動</strong>し、「Join ARK」に進みます</li>
+          <li><strong>Steamランチャーで「表示」</strong>をクリックします</li>
+          <li><strong>リストから「ゲームサーバー」</strong>をクリックします</li>
+          <li><strong>「お気に入り」タブで「＋」ボタン</strong>をクリックし、新しいサーバーを追加します</li>
+          <li><strong>サーバーIPを入力:</strong> <code style="background: #333; padding: 2px 6px; border-radius: 4px;">theafterlifenetwork.serveminecraft.net:27015</code></li>
+          <li><strong>サーバーに接続</strong>します</li>
+          <li><strong>参加するにはパスワード</strong> <code style="background: #333; padding: 2px 6px; border-radius: 4px;">RaiseForever</code> <strong>を使用してください</strong></li>
+        </ol>
+        
+        <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">参加できませんか？サーバーが起動しているか確認してください！</p>
+          </div>
+        `;
+      }
+      
+      // Create modal
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.8); display: flex; align-items: center;
+        justify-content: center; z-index: 1000; padding: 2rem;
+      `;
+      
+      modal.innerHTML = tutorialContent;
+      
+      // Add close button
+      const closeBtn = document.createElement('button');
+      closeBtn.textContent = '✕ 閉じる';
+      closeBtn.style.cssText = `
+        position: absolute; top: 1rem; right: 1rem; background: #dc2626;
+        color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px;
+        cursor: pointer; font-weight: 500;
+      `;
+      closeBtn.onclick = () => document.body.removeChild(modal);
+      
+      modal.appendChild(closeBtn);
+      
+      // Close on background click
+      modal.onclick = (e) => {
+        if (e.target === modal) document.body.removeChild(modal);
+      };
+      
+      document.body.appendChild(modal);
+    }
+  </script>
+</body>
+</html>

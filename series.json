@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "title": "86 EIGHTY-SIX",
+    "description": "Season 1",
+    "cover": "images/86.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Aharen-san wa Hakarenai",
+    "description": "Season 1 & 2",
+    "cover": "images/Aharen-san.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Akashic Records of Bastard Magic Instructor",
+    "description": "Season 1",
+    "cover": "images/Akashic.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Akebi's Sailor Uniform",
+    "description": "Season 1",
+    "cover": "images/Akebi.jpg"
+  },
+  {
+    "id": 5,
+    "title": "The Apothecary Diaries",
+    "description": "Season 1 & 2",
+    "cover": "images/Apothecary.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Arknights",
+    "description": "Season 1, 2 & 3",
+    "cover": "images/Arknights.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Ascendance of a Bookworm",
+    "description": "Season 1",
+    "cover": "images/Ascendance.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Baki the Grappler",
+    "description": "Season 1 & 2",
+    "cover": "images/Baki.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Beyond the Boundary",
+    "description": "Season 1",
+    "cover": "images/Beyond_the_Boundary.jpg"
+  },
+  {
+    "id": 10,
+    "title": "BOCCHI THE ROCK!",
+    "description": "Season 1",
+    "cover": "images/BTR.jpg"
+  }
+
+]

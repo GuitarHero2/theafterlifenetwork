@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+  <meta charset="UTF-8">
+  <title>Servidores - The Afterlife Official Page</title>
+  <link rel="icon" href="bocchi.webp" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #2a2a2a;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      border-top: 1px solid #2a2a2a;
+      border-bottom: none;
+      margin-top: 3rem;
+    }
+    section {
+      max-width: 500px;
+      margin: 1rem;
+      padding: 2rem;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 16px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: rgba(42, 42, 42, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      transition: background 0.2s ease;
+      font-size: 1.1rem;
+    }
+    
+    .card:hover {
+      background: rgba(42, 42, 42, 0.8);
+    }
+    .flex {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .cover {
+      width: 64px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    input, button {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 6px;
+    }
+    input {
+      flex: 1;
+      background: #2a2a2a;
+      color: #e0e0e0;
+    }
+    button {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      cursor: pointer;
+      border: 1px solid #7c3aed;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    }
+    button:hover {
+      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+      border-color: #8b5cf6;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      color: rgb(165, 164, 164);
+    }
+  </style>
+</head>
+<body >
+  <header>
+    <h1>Servicios</h1>
+    <p>Aquí puedes ver cómo acceder a nuestros diversos servicios a través de diferentes plataformas.</p>
+    <p style="color:orange;">⚠️ Si necesitas ayuda sobre cómo acceder o tienes problemas siguiendo las instrucciones, puedes solucionarlos con las indicaciones al final de la página.</p>
+    <div style="margin-top:1rem;">
+        <button onclick="window.location.href='index-es.html'">Volver</button>
+    </div>
+  </header>
+
+<!-- Multimedia Server -->
+<main style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: stretch; width: 100%; box-sizing: border-box; padding: 2rem 0;">
+    <section style="flex: 1 1 320px; min-width: 280px;">
+        <h2>Anime, Series y Películas:</h2>
+        <div class="card">
+            En Android:<br>
+            <span style="color:#aaa; display:block; margin-top:4px;"></span>
+            <button onclick="showTutorial('onandroidvideo')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 Cómo unirse</button>
+        </div>
+        <div class="card">
+            En iOS/iPadOS:<br>
+            <span style="color:#aaa; display:block; margin-top:4px;"></span>
+            <button onclick="showTutorial('oniosvideo')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 Cómo unirse</button>
+        </div>
+        <div class="card">
+            En Windows:<br>
+            <span style="color:#aaa; display:block; margin-top:4px;"></span>
+            <button onclick="showTutorial('onwindowsvideo')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 Cómo unirse</button>
+        </div>
+        <div class="card">
+            En MacOS:<br>
+            <span style="color:#aaa; display:block; margin-top:4px;"></span>
+            <button onclick="showTutorial('onmacosvideo')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 Cómo unirse</button>
+        </div>
+    </section>
+
+
+    <!-- Music Server -->
+    <section style="flex: 1 1 320px; min-width: 280px;">
+        <h2>Servidor de Música:</h2>
+        <div class="card">
+            En Android:<br>
+            <span style="color:#aaa; display:block; margin-top:4px;"></span>
+            <button onclick="showTutorial('onandroidmusic')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 Cómo unirse</button>
+        </div>
+        <div class="card">
+            En iOS/iPadOS:<br>
+            <span style="color:#aaa; display:block; margin-top:4px;"></span>
+            <button onclick="showTutorial('oniosmusic')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 Cómo unirse</button>
+        </div>
+        <div class="card">
+            En Windows:<br>
+            <span style="color:#aaa; display:block; margin-top:4px;"></span>
+            <button onclick="showTutorial('onwindowsmusic')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 Cómo unirse</button>
+        </div>
+        <div class="card">
+            En MacOS:<br>
+            <span style="color:#aaa; display:block; margin-top:4px;"></span>
+            <button onclick="showTutorial('onmacosmusic')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-color: #047857; margin-top:10px;">📖 Cómo unirse</button>
+        </div>
+    </section>
+</main>
+
+  <footer>
+    © <span id="year"></span> The Afterlife Network. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // --- Footer Year ---
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // --- Tutorial Function ---
+    function showTutorial(serverType) {
+      let tutorialContent = '';
+      
+      if (serverType === 'onandroidvideo') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+            <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 Cómo usarlo en Android</h2>
+            
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Fladder:</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li><strong>Ve a la Google Play Store o cualquier otra tienda y descarga</strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">Fladder</code></li>
+              <li><strong>Abre la aplicación e introduce la siguiente URL en el cuadro "</strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">Servidor</code><strong>"</strong></li>
+              <li><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:8096/</code></li>
+              <li>Deberían aparecer dos nuevos cuadros, en ellos introduce el <strong>nombre de usuario</strong> y <strong>contraseña</strong> que te proporcionó el dueño del servidor.</li>
+              <li>Haz clic en <strong>"Iniciar sesión"</strong> y espera a que se conecte</li>
+              <li>¡Ahora puedes disfrutar de una variedad de animes y series alojadas por nosotros! <strong>¡Disfruta!</strong></li>
+            </ol>
+
+            <h3 style="color: #FFA500; margin-top: 1.5rem;">Notas importantes:</h3>
+            <ul style="color: #FFA500; line-height: 1.6;">
+              <li>Te recomiendo fuertemente usar <strong>Fladder</strong> ya que soporta todos los formatos de archivo con los que trabaja nuestro servidor. Usar cualquier otro reproductor puede causar problemas y no podré ayudarte si algo no funciona.</li>
+            </ul>
+            
+            <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">¿Tienes problemas? ¡Consulta la guía de solución de problemas al final de la página!</p>
+          </div>
+        `;
+      } else if (serverType === 'oniosvideo') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+            <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 Cómo usarlo en iOS/iPadOS</h2>
+            
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Infuse (Recomendado, de pago):</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li><strong>Ve a la App Store y descarga</strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">Infuse</code></li>
+              <li><strong>Abre la aplicación y haz clic en el icono de carpeta en la barra inferior</strong></li>
+              <li>En la sección <strong>Compartidos guardados</strong>, haz clic en el botón <strong>Añadir...</strong></li>
+              <li>Desplázate hacia abajo y haz clic en el botón <strong>Añadir Jellyfin</strong>.</li>
+              <li>En el cuadro <strong>Dirección</strong>, introduce </strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:8096/</code></li>
+              <li>En los cuadros <strong>Nombre de usuario</strong> y <strong>Contraseña</strong>, introduce el <strong>Nombre de usuario</strong> y <strong>Contraseña</strong> respectivamente.</li>
+              <li>Haz clic en <strong>Añadir</strong> y espera a que se conecte</li>
+              <li><strong>¡Disfruta!</strong> de una variedad de animes y series alojadas por nosotros.</li>
+            </ol>
+
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Swiftfin (Recomendado, gratuito)):</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li><strong>Ve a la App Store y descarga</strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">Swiftfin iOS/iPadOS</code></li>
+              <li><strong>Abre la app y dale al botón de conectar</strong></li>
+              <li>En el recuadro de<strong>CONNECT TO SERVER</strong>, introduce la siguiente URL...</li>
+              <li></strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:8096/</code></li>
+              <li>Ahora haz click en<strong>Add User (Añadir usuario)</strong>.</li>
+              <li>En el recuadro de <strong>Username (Nombre de usuario)</strong> y <strong>Password (Contraseña)</strong>, introduce tu <strong>Username (Nombre de usuario)</strong> y <strong>Password (Contraseña)</strong> respectivamente.</li>
+              <li>Haz click en el boton de <strong>Connect (Conectar)</strong> y espera a que se conecte.</li>
+              <li><strong>¡Disfruta!</strong> de una variedad de animes y series alojadas por nosotros.</li>
+            </ol>
+
+            <h3 style="color: #FFA500; margin-top: 1.5rem;">Important Notes:</h3>
+            <ul style="color: #FFA500; line-height: 1.6;">
+              <li>Recomiendo fuertemente usar <strong>Swiftfin</strong> ya que soporta todos los formatos que manejamos y es completamente gratis. Usar cualquier otro reproductor de video puede causar problemas y podría no ser capaz de ayudarte si algo llega a pasar o algo no funciona.</li>
+            </ul>
+            
+            <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">¿Tienes problemas? ¡Consulta la guía de solución de problemas al final de la página!</p>
+          </div>
+        `;
+      } else if (serverType === 'onwindowsvideo') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+            <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 Cómo usarlo en Windows 10/11</h2>
+            
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Fladder:</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li><strong>Ve a la página oficial de Fladder en GitHub y descarga</strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">Fladder.exe</code></li>
+              <li><strong>Después de la instalación, abre la aplicación e introduce la siguiente URL en el cuadro "</strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">Servidor</code><strong>"</strong></li>
+              <li><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:8096/</code></li>
+              <li>Deberían aparecer dos nuevos cuadros, en ellos introduce el <strong>nombre de usuario</strong> y <strong>contraseña</strong> que te proporcionó el dueño del servidor.</li>
+              <li>Haz clic en <strong>"Iniciar sesión"</strong> y espera a que se conecte</li>
+              <li>¡Ahora puedes disfrutar de una variedad de animes y series alojadas por nosotros! <strong>¡Disfruta!</strong></li>
+            </ol>
+
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Jellyfin:</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li><strong>Ve a la página oficial de Jellyfin y descarga</strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">Jellyfin para Windows</code></li>
+              <li><strong>Después de la instalación, abre la aplicación e introduce la siguiente URL en el cuadro "</strong><code style="background: #333; padding: 2px 6px; border-radius: 4px;">Servidor</code><strong>"</strong></li>
+              <li><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:8096/</code></li>
+              <li>Deberían aparecer dos nuevos cuadros, en ellos introduce el <strong>nombre de usuario</strong> y <strong>contraseña</strong> que te proporcionó el dueño del servidor.</li>
+              <li>Haz clic en <strong>"Iniciar sesión"</strong> y espera a que se conecte</li>
+              <li>¡Ahora puedes disfrutar de una variedad de animes y series alojadas por nosotros! <strong>¡Disfruta!</strong></li>
+            </ol>
+            
+            <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">¿Tienes problemas? ¡Consulta la guía de solución de problemas al final de la página!</p>
+          </div>
+        `;
+      } else if (serverType === 'onmacosvideo') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+            <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">Tutorial aún no disponible... ¡Lo siento!</h2>
+          </div>
+        `;
+      } else if (serverType === 'onandroidmusic') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+            <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 Cómo usarlo en Android</h2>
+            
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Symfonium (Recomendado, de pago):</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li>Ve a la Google Play Store o cualquier otra tienda y descarga<code style="background: #333; padding: 2px 6px; border-radius: 4px;">Symfonium</code></li>
+              <li>Abre la aplicación y haz clic en "<strong>En un servidor de red o proveedor en la nube</strong>"</li>
+              <li>Entre las diferentes opciones, selecciona "<strong>(Abierto) Subsonic</strong>"</li>
+              <li>Introduce la siguiente URL en el cuadro "<strong>Dirección del servidor</strong>"</li>
+              <li><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:4533/</code></li>
+              <li>En los cuadros "<strong>Nombre de usuario</strong>" y "<strong>Contraseña</strong>", introduce el <strong>Nombre de usuario</strong> y <strong>Contraseña</strong> respectivamente.</li>
+              <li>Haz clic en "<strong>Conectar</strong>" y espera a que se conecte</li>
+              <li>La aplicación comenzará a cargar todo nuestro catálogo, ten paciencia.</li>
+              <li>Una vez finalizado, <strong>¡Disfruta!</strong> de una variedad de música alojada por nosotros.</li>
+            </ol>
+
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Substreamer (Recomendado, gratuito):</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li>Ve a la Google Play Store o cualquier otra tienda y descarga<code style="background: #333; padding: 2px 6px; border-radius: 4px;">Substreamer</code></li>
+              <li>Abre la aplicación e introduce la siguiente URL en el cuadro "<strong>Dirección del servidor</strong>"</li>
+              <li><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:4533/</code></li>
+              <li>En los cuadros "<strong>Nombre de usuario</strong>" y "<strong>Contraseña</strong>", introduce el <strong>Nombre de usuario</strong> y <strong>Contraseña</strong> respectivamente.</li>
+              <li>Haz clic en "<strong>Conectar</strong>" y espera a que se conecte</li>
+              <li>La aplicación comenzará a cargar todo nuestro catálogo, ten paciencia.</li>
+              <li>Una vez finalizado, <strong>¡Disfruta!</strong> de una variedad de música alojada por nosotros.</li>
+            </ol>
+
+            <h3 style="color: #FFA500; margin-top: 1.5rem;">Notas importantes:</h3>
+            <ul style="color: #FFA500; line-height: 1.6;">
+              <li> ⚠️ <strong>Symfonium</strong> es una aplicación de pago con una prueba gratuita, si deseas una alternativa completamente gratuita, sigue desplazándote hacia abajo en esta sección</li>
+            </ul>
+            
+            <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">¿Tienes problemas? ¡Consulta la guía de solución de problemas al final de la página!</p>
+          </div>
+        `;
+      } else if (serverType === 'oniosmusic') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+            <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 Cómo usarlo en iOS/iPadOS</h2>
+            
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Arpeggi (Recomendado):</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li>Descarga la aplicación <code style="background: #333; padding: 2px 6px; border-radius: 4px;">TestFlight</code> en la App Store y regístrate.</li>
+              <li>Una vez registrado, busca en internet <strong>TestFlight Arpeggi</strong> y abre el enlace desde <strong>TestFlight - Apple</strong>.</li>
+              <li>Sigue las instrucciones y instala la aplicación.</li>
+              <li>Una vez instalada, introduce la siguiente URL en el cuadro "<strong>primero</strong>"</li>
+              <li><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:4533/</code></li>
+              <li>En los cuadros "<strong>Nombre de usuario</strong>" y "<strong>Contraseña</strong>", introduce el <strong>Nombre de usuario</strong> y <strong>Contraseña</strong> respectivamente.</li>
+              <li>El cuadro "<strong>Nombre del servidor amigable</strong>" puede ser cualquier cosa que desees.</li>
+              <li>Haz clic en "<strong>Conectar</strong>" y espera a que se conecte.</li>
+              <li>Ahora la aplicación comenzará a cargar todo nuestro catálogo, ten paciencia.</li>
+              <li>Una vez finalizado, <strong>¡Disfruta!</strong> de una variedad de música alojada por nosotros.</li>
+            </ol>
+
+            <h3 style="color: #00FFFF; margin-top: 1.5rem;">Notas importantes (aunque no tan importantes):</h3>
+            <ul style="color: #00FFFF; line-height: 1.6;">
+              <li>Te recomiendo fuertemente usar la aplicación Arpeggi, ya que es la más parecida a Spotify disponible para este tipo de uso en iOS/iPadOS.</li>
+            </ul>
+            
+            <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">¿Tienes problemas? ¡Lee la guía de solución de problemas al final de la página!</p>
+          </div>
+        `;
+      } else if (serverType === 'onwindowsmusic') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+            <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">📖 Cómo usarlo en Windows 10/11:</h2>
+            
+            <h3 style="color: #ffffff; margin-top: 1.5rem;">Usando Feishin (Recomendado):</h3>
+            <ol style="color: #e0e0e0; line-height: 1.6;">
+              <li>Ve a la página oficial de GitHub de Feishin y descarga<code style="background: #333; padding: 2px 6px; border-radius: 4px;">Feishin-(versión)-win-x64.exe</code>. (O ARM64, dependiendo de tu dispositivo)</li>
+              <li>Después de la instalación, abre la aplicación e introduce la siguiente URL en el cuadro "<strong>Dirección del servidor</strong>"</li>
+              <li><code style="background: #333; padding: 2px 6px; border-radius: 4px;">http://theafterlifenetwork.serveminecraft.net:4533/</code></li>
+              <li>En los cuadros "<strong>Nombre de usuario</strong>" y "<strong>Contraseña</strong>", introduce el <strong>Nombre de usuario</strong> y <strong>Contraseña</strong> respectivamente.</li>
+              <li>Haz clic en "<strong>Conectar</strong>" y espera a que se conecte</li>
+              <li>La aplicación comenzará a cargar todo nuestro catálogo, ten paciencia.</li>
+              <li>Una vez finalizado, <strong>¡Disfruta!</strong> de una variedad de música alojada por nosotros.</li>
+            </ol>
+
+            <h3 style="color: #00FFFF; margin-top: 1.5rem;">Notas importantes (aunque no tan importantes):</h3>
+            <ul style="color: #00FFFF; line-height: 1.6;">
+              <li>Te recomiendo fuertemente usar la aplicación Feishin, ya que es la más parecida a Spotify disponible para este tipo de uso en Windows. Sin embargo, también puedes usar Aonsoku, que ofrece una interfaz más sencilla y mejor compatibilidad con Windows.</li>
+            </ul>
+            
+            <p style="color: #10b981; text-align: center; margin-top: 1.5rem; font-weight: 500;">¿Tienes problemas? ¡Lee la guía de solución de problemas al final de la página!</p>
+          </div>
+        `;
+      } else if (serverType === 'onmacosmusic') {
+        tutorialContent = `
+          <div style="text-align: left; max-width: 600px; margin: 0 auto; padding: 2rem; background: rgba(42, 42, 42, 0.9); border-radius: 12px; border: 1px solid #333;">
+            <h2 style="color: #10b981; text-align: center; margin-bottom: 1.5rem;">Tutorial aún no disponible... ¡Lo siento!</h2>
+          </div>
+        `;
+      }
+      
+      // Create modal
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.8); display: flex; align-items: center;
+        justify-content: center; z-index: 1000; padding: 2rem;
+      `;
+      
+      modal.innerHTML = tutorialContent;
+      
+      // Add close button
+      const closeBtn = document.createElement('button');
+      closeBtn.textContent = '✕ Close';
+      closeBtn.style.cssText = `
+        position: absolute; top: 1rem; right: 1rem; background: #dc2626;
+        color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px;
+        cursor: pointer; font-weight: 500;
+      `;
+      closeBtn.onclick = () => document.body.removeChild(modal);
+      
+      modal.appendChild(closeBtn);
+      
+      // Close on background click
+      modal.onclick = (e) => {
+        if (e.target === modal) document.body.removeChild(modal);
+      };
+      
+      document.body.appendChild(modal);
+    }
+  </script>
+</body>

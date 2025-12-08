@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+  <meta charset="UTF-8">
+  <title>Servidor Multimedia - The Afterlife Official Page</title>
+  <link rel="icon" href="bocchi.webp" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #2a2a2a;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      border-top: 1px solid #2a2a2a;
+      border-bottom: none;
+      margin-top: 3rem;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 16px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    h2 {
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: rgba(42, 42, 42, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      transition: background 0.2s ease;
+    }
+    
+    .card:hover {
+      background: rgba(42, 42, 42, 0.8);
+    }
+    .flex {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .cover {
+      width: 64px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    input, button {
+      padding: 0.5rem;
+      border: none;
+      border-radius: 6px;
+    }
+    input {
+      flex: 1;
+      background: #2a2a2a;
+      color: #e0e0e0;
+    }
+    button {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      cursor: pointer;
+      border: 1px solid #7c3aed;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    }
+    button:hover {
+      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+      border-color: #8b5cf6;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      color: rgb(165, 164, 164);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Servidor Multimedia</h1>
+    <p>Revisa nuestras colecciones abajo. Cada sección multimedia tiene su propio buscador.</p>
+    <p style="color:orange;">⚠️ Si encuentras algún problema, nuestros servidores pueden estar caídos o hay un problema con el sitio web! (Intenta limpiar la caché de tu navegador)</p>
+    <div style="margin-top:1rem;">
+        <button onclick="window.location.href='index-es.html'">Volver al Inicio</button>
+    </div>
+  </header>
+
+<main>
+    <section>
+        <h2>Transmitiendo Actualmente:</h2>
+        <div id="airingList" style="display: flex; gap: 1rem; overflow-x: auto; padding-bottom: 1rem;"></div>
+    </section>
+</main>
+
+<script>
+  // --- Display airing series horizontally ---
+  let airingData = [];
+
+  function renderAiring() {
+    const list = document.getElementById("airingList");
+    list.innerHTML = "";
+    if (!airingData.length) {
+      list.innerHTML = "<p>No se encontraron series transmitiendo actualmente.</p>";
+      return;
+    }
+    list.innerHTML = airingData.map(s => `
+      <div class="card" style="min-width:200px; display:flex; flex-direction:column; align-items:center;">
+        ${s.cover ? `<img src="${s.cover}" alt="${s.title}" class="cover" style="width:80px; height:120px;">` : ""}
+        <div style="text-align:center;">
+          <strong>${s.title}</strong><br>
+          <span style="color:#aaa">${s.description || ""}</span>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  // Load airing.json and render
+  fetch("airing.json")
+    .then(res => res.json())
+    .then(data => {
+      airingData = data;
+      renderAiring();
+    })
+    .catch(err => console.error("Error cargando airing.json", err));
+</script>
+<!-- Anime/Series -->
+<main style="display: flex; gap: 2rem; justify-content: center; align-items: flex-start;">
+    <section style="flex: 1;">
+        <h2>Anime, Series y Películas:</h2>
+        <p>¡Mira qué series y/o películas están disponibles en nuestra colección!</p>
+        <input type="text" id="seriesSearch" placeholder="Buscar series..." style="width:100%; margin-bottom:1rem">
+        <div id="seriesList"></div>
+    </section>
+
+    <section style="flex: 1;">
+        <h2>Colección de Manga:</h2>
+        <p>¡Mira qué manga están disponibles en nuestra colección!</p>
+        <input type="text" id="mangaSearch" placeholder="Buscar manga..." style="width:100%; margin-bottom:1rem">
+        <div id="mangaList"></div>
+    </section>
+</main>
+  
+  <footer>
+    © <span id="year"></span> The Afterlife Network. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // --- Load and search series from JSON ---
+      let seriesData = [];
+
+      function renderSeries(query) {
+        const list = document.getElementById("seriesList");
+        list.innerHTML = "";
+        const filtered = seriesData.filter(s =>
+          s.title.toLowerCase().includes(query.toLowerCase())
+        );
+        if (!filtered.length) {
+          list.innerHTML = "<p>No se encontraron series.</p>";
+          return;
+        }
+        list.innerHTML = filtered.map(s => `
+          <div class="card flex">
+            ${s.cover ? `<img src="${s.cover}" alt="${s.title}" class="cover">` : ""}
+            <div>
+              <strong>${s.title}</strong><br>
+              <span style="color:#aaa">${s.description}</span>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // Cargar JSON al iniciar
+      fetch("series.json")
+        .then(res => res.json())
+        .then(data => {
+          seriesData = data;
+          renderSeries("");
+        })
+        .catch(err => console.error("Error cargando series.json", err));
+
+      // Filtrar mientras escribes
+      document.getElementById("seriesSearch").addEventListener("input", (e) => {
+        renderSeries(e.target.value);
+      });
+
+      // --- Load and search manga from JSON ---
+      let mangaData = [];
+
+      function renderManga(query) {
+        const list = document.getElementById("mangaList");
+        list.innerHTML = "";
+        const filtered = mangaData.filter(s =>
+          s.title.toLowerCase().includes(query.toLowerCase())
+        );
+        if (!filtered.length) {
+          list.innerHTML = "<p>No se encontró manga.</p>";
+          return;
+        }
+        list.innerHTML = filtered.map(s => `
+          <div class="card flex">
+            ${s.cover ? `<img src="${s.cover}" alt="${s.title}" class="cover">` : ""}
+            <div>
+              <strong>${s.title}</strong><br>
+              <span style="color:#aaa">${s.description}</span>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // Cargar JSON al iniciar
+      fetch("manga.json")
+        .then(res => res.json())
+        .then(data => {
+          mangaData = data;
+          renderManga("");
+        })
+        .catch(err => console.error("Error cargando manga.json", err));
+
+      // Filtrar mientras escribes
+      document.getElementById("mangaSearch").addEventListener("input", (e) => {
+        renderManga(e.target.value);
+      });
+
+      // Cargar JSON al iniciar
+      fetch("airing.json")
+        .then(res => res.json())
+        .then(data => {
+          airingData = data;
+          renderAiring();
+        })
+        .catch(err => console.error("Error cargando airing.json", err));
+    });
+  </script>
+</body>
+</html>

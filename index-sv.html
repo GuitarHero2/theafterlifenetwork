@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>The Afterlife Officiell Sida</title>
+  <link rel="icon" href="bocchi.webp" type="image/x-icon">
+  <meta name="description" content="Informationssida för allt innehåll i The Afterlife Network.">
+  <meta name="author" content="NozomiGH (小林希実)">
+  <meta name="keywords" content="Musik, Multimedia, Filserver, Spelservrar">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="The Afterlife Officiell Sida" property="og:title">
+  <meta content="Informationssida för allt innehåll i The Afterlife Network.", property="og:description">
+  <meta content="The Afterlife Network" property="og:site_name">
+  <meta content='bocchi.webp' property='og:image'>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #2a2a2a;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      border-top: 1px solid #2a2a2a;
+      border-bottom: none;
+      margin-top: 3rem;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 16px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+    .card {
+      background: rgba(42, 42, 42, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      transition: background 0.2s ease;
+    }
+    
+    .card:hover {
+      background: rgba(42, 42, 42, 0.8);
+    }
+    .flex {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .cover {
+      width: 64px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    input, button {
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    input {
+      flex: 1;
+      background: rgba(42, 42, 42, 0.8);
+      color: #e0e0e0;
+      border: 1px solid #333;
+    }
+    input:focus {
+      outline: none;
+      border-color: #555;
+      background: rgba(42, 42, 42, 1);
+    }
+    button {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      cursor: pointer;
+      border: 1px solid #7c3aed;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    }
+    button:hover {
+      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+      border-color: #8b5cf6;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      color: rgb(165, 164, 164);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Afterlife Officiell Sida</h1>
+    <p>Din gateway till alla våra servrar och tjänster</p>
+  </header>
+
+  <section>
+    <h2>Spelservrar:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        Här kan du se en lista över alla våra spelservrar som hostas av The Afterlife Network.
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="window.location.href='game_servers-sv.html'">Se listan här!</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Anime, Serier, Filmer & Manga-servrar:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        Se vilka anime, manga, serier och filmer som finns tillgängliga i vår samling.
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="window.location.href='multimedia_server-sv.html'">Kontrollera här!</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Filserver:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        Utforska vad vi har att erbjuda. Från appar till lärverktyg och böcker!
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="window.open('http://theafterlifenetwork.serveminecraft.net:5000', '_blank')">Gå nu!</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Discord Server:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        Vill du erbjuda någon till servern? Använd denna länken!
+      </div>
+      <div style="text-align:center; margin-top:20px; display:flexbox">
+        <button onclick="window.open('https://discord.gg/eyRjBxdAZ5', '_blank')">Öppna Länken</button>
+        <button onclick="window.alert('Kopiera denna länken för att erbjuda någon annan! \n\n\nhttps://discord.gg/eyRjBxdAZ5')">Visa Länken</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Mer Kommer Snart</h2>
+    <p>Vi expanderar alltid. Håll utkik efter fler tjänster och funktioner!</p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> The Afterlife Network. Alla rättigheter förbehållna.<br>
+    <section>
+      <button onclick="window.location.href='index.html'">🇺🇸English</button>
+      <button onclick="window.location.href='index-es.html'">🇲🇽Español</button>
+      <button onclick="window.location.href='index-ja.html'">🇯🇵日本語</button>
+    </section>
+  </footer>
+
+  <script>
+    // --- Footer Year ---
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

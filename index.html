@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Afterlife Official Page</title>
+  <link rel="icon" href="bocchi.webp" type="image/x-icon">
+  <meta name="description" content="Info-page for all the content in The Afterlife Network.">
+  <meta name="author" content="NozomiGH (小林希実)">
+  <meta name="keywords" content="Music, Multimedia, File Server, Game Servers">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="The Afterlife Official Page" property="og:title">
+  <meta content="Info-page for all the content in The Afterlife Network.", property="og:description">
+  <meta content="The Afterlife Network" property="og:site_name">
+  <meta property="og:image" content="https://theafterlifenetwork.serveminecraft.net/bocchi.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 1px solid #2a2a2a;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    footer {
+      border-top: 1px solid #2a2a2a;
+      border-bottom: none;
+      margin-top: 3rem;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 16px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+    .card {
+      background: rgba(42, 42, 42, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid #333;
+      transition: background 0.2s ease;
+    }
+    
+    .card:hover {
+      background: rgba(42, 42, 42, 0.8);
+    }
+    .flex {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .cover {
+      width: 64px;
+      height: 96px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    input, button {
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+    input {
+      flex: 1;
+      background: rgba(42, 42, 42, 0.8);
+      color: #e0e0e0;
+      border: 1px solid #333;
+    }
+    input:focus {
+      outline: none;
+      border-color: #555;
+      background: rgba(42, 42, 42, 1);
+    }
+    button {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      cursor: pointer;
+      border: 1px solid #7c3aed;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    }
+    button:hover {
+      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+      border-color: #8b5cf6;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+      transform: translateY(-1px);
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      color: rgb(165, 164, 164);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Afterlife Official Page</h1>
+    <p>Your gateway to all our servers and services</p>
+  </header>
+
+  <section>
+    <h2>Game Servers:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        Here can you see a list of all our game servers hosted by The Afterlife Network.
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="window.location.href='game_servers.html'">See the list here!</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Anime, Series, Movies & Manga Servers:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        See what animes, manga, series and movies are available in our collection.
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="window.location.href='multimedia_server.html'">Check it here!</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to Access One of Our Services:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        See how to access our multimedia servers here!
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="window.location.href='server_list.html'">See here how!</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>File Server:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        Explore what files we have to offer. From apps to learning tools and books!
+      </div>
+      <div style="text-align:center; margin-top:20px;">
+        <button onclick="window.open('http://theafterlifenetwork.serveminecraft.net:5000', '_blank')">Go now!</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Discord Server:</h2>
+    <div class="card">
+      <div style="text-align:center;">
+        Wanna invite someone to the server? Use this link!
+      </div>
+      <div style="text-align:center; margin-top:20px; display:flexbox">
+        <button onclick="window.open('https://discord.gg/eyRjBxdAZ5', '_blank')">Open Link</button>
+        <button onclick="window.alert('Copy this link to invite someone else! \n\n\nhttps://discord.gg/eyRjBxdAZ5')">Show Link</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>More Coming Soon</h2>
+    <p>We’re always expanding. Stay tuned for more services and features!</p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> The Afterlife Network. All rights reserved.<br>
+    <section>
+      <button onclick="window.location.href='index-es.html'">🇲🇽Español</button>
+      <button onclick="window.location.href='index-sv.html'">🇸🇪Svenska</button>
+      <button onclick="window.location.href='index-ja.html'">🇯🇵日本語</button>
+    </section>
+  </footer>
+
+  <script>
+    // --- Footer Year ---
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
