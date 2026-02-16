@@ -735,6 +735,8 @@
                 "cards.navidrome.type": "STREAMER MÚSICA", "cards.navidrome.desc": "Streaming de audio de alta definición. Compatible con cualquier reproductor \"Subsonic\". Crea listas, descarga offline y haz scrobbling.",
                 "cards.komga.type": "CÓMICS Y MANGA", "cards.komga.desc": "Lee manga, cómics y libros en tu navegador o apps dedicadas. Sincroniza el progreso de lectura entre dispositivos.",
                 "cards.dufs.type": "SERVIDOR DE DESCARGAS", "cards.dufs.desc": "Servidor de archivos de alta velocidad para descargar recursos de la comunidad, herramientas y medios compartidos directamente desde tu navegador.", "cards.dufs.btn": "Abrir Explorador",
+                "cards.community.title": "Comunidad", "cards.community.type": "PETICIONES Y CHAT", "cards.community.desc": "Únete a nuestro Discord para pedir películas/series, reportar problemas o charlar con otros miembros de The Afterlife Network.", "cards.community.btn": "Unirse al Servidor",
+                "labels.server_url": "URL del Servidor", "labels.clients": "Clientes Recomendados",
                 "community.title": "Únete a la Comunidad", "community.desc": "Obtén soporte instantáneo, pide nuevo contenido y pasa el rato con el resto de la comunidad de The Afterlife Network en Discord.", "community.btn": "Unirse al Servidor de Discord",
                 "guides.login.title": "Protocolo General de Login", "guides.login.content": `<p>El acceso es solo por invitación. Si has recibido un código por email o Discord:</p><ol class="list-decimal list-inside mt-2 space-y-2 ml-2"><li>Ingresa el usuario proporcionado en tu invitación.</li><li>Usa la contraseña temporal proporcionada en el canal de discord.</li><li>Se te pedirá que la cambies inmediatamente al primer inicio de sesión.</li></ol>`,
                 "guides.jelly.title": "Guía Configuración Jellyfin", "guides.jelly.content": `<ol class="list-decimal list-inside space-y-3"><li><strong>Descargar Cliente:</strong> Usa Swiftfin (iOS), Jellyfin (Android), o Jellyfin Media Player (Windows).</li><li><strong>Añadir Servidor:</strong> <code class="bg-slate-900 px-2 py-1 rounded text-purple-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:8097</code></li><li><strong>Conectar:</strong> Pulsa conectar, luego introduce tu Usuario y Contraseña.</li></ol>`,
@@ -864,8 +866,7 @@
         // ------------------------------------------
         // IMPROVED STATUS CHECKER (IMAGE BEACON METHOD)
         // ------------------------------------------
-        // Using Image() beacon is more reliable for bypassing Mixed Content blocks
-        // compared to fetch() when hosting on HTTPS (GitHub) and pointing to HTTP servers.
+        // Optimistic check: treating fast errors as "Online" to bypass browser HTTPS block.
         function checkService(serviceKey) {
             const config = serverConfig[serviceKey];
             const dot = document.getElementById(`status-dot-${serviceKey}`);
@@ -886,15 +887,12 @@
             };
 
             img.onerror = function() {
-                // Since Dufs doesn't have a favicon, getting an 'error' actually means
-                // the server responded (usually with a 404). If the server was truly down,
-                // the timeout or 'blocked' status would trigger.
-                // However, browsers block mixed-content images too. 
-                // To be safe, we treat a fast error as 'Online' for Dufs.
                 const duration = Date.now() - startTime;
-                if (serviceKey === 'dufs' && duration < 1000) {
+                // If error happens very quickly (< 1.5s), it usually means server is up
+                // but blocked by Mixed Content policy or returned a 404.
+                if (duration < 1500) {
                      dot.className = 'status-dot status-online';
-                     pingText.innerText = `Online (${duration}ms)`;
+                     pingText.innerText = `Online (${duration}ms)*`;
                      pingText.className = 'text-xs font-mono text-green-400';
                 } else {
                      dot.className = 'status-dot status-offline';
@@ -903,8 +901,7 @@
                 }
             };
 
-            // We append a timestamp to force the browser to actually check the network
-            // instead of using a cached image.
+            // Force browser to network check instead of cache
             img.src = config.url + (config.iconPath || '/favicon.ico') + '?t=' + startTime;
         }
 
