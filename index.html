@@ -1,206 +1,1060 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <title>The Afterlife Official Page</title>
-  <link rel="icon" href="bocchi.webp" type="image/x-icon">
-  <meta name="description" content="Info-page for all the content in The Afterlife Network.">
-  <meta name="author" content="NozomiGH (小林希実)">
-  <meta name="keywords" content="Music, Multimedia, File Server, Game Servers">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="The Afterlife Official Page" property="og:title">
-  <meta content="Info-page for all the content in The Afterlife Network.", property="og:description">
-  <meta content="The Afterlife Network" property="og:site_name">
-  <meta property="og:image" content="https://theafterlifenetwork.serveminecraft.net/bocchi.webp">
-  <meta property="og:image:type" content="image/webp">
-  <meta property="og:image:width" content="512">
-  <meta property="og:image:height" content="512">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-      color: #e0e0e0;
-      min-height: 100vh;
-    }
-    header, footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      border-bottom: 1px solid #2a2a2a;
-      background: rgba(0, 0, 0, 0.3);
-    }
-    footer {
-      border-top: 1px solid #2a2a2a;
-      border-bottom: none;
-      margin-top: 3rem;
-    }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: rgba(30, 30, 30, 0.8);
-      border-radius: 16px;
-      border: 1px solid #2a2a2a;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Afterlife Network | Media Hub</title>
     
-    section:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    }
-    h2 {
-      margin-bottom: 1.5rem;
-      color: #ffffff;
-      font-weight: 500;
-      font-size: 1.5rem;
-    }
-    .card {
-      background: rgba(42, 42, 42, 0.6);
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 1rem;
-      border: 1px solid #333;
-      transition: background 0.2s ease;
-    }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Added Noto Sans JP for Japanese support -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     
-    .card:hover {
-      background: rgba(42, 42, 42, 0.8);
-    }
-    .flex {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-    .cover {
-      width: 64px;
-      height: 96px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
-    input, button {
-      padding: 0.75rem 1rem;
-      border: none;
-      border-radius: 8px;
-      font-family: inherit;
-      transition: all 0.2s ease;
-    }
-    input {
-      flex: 1;
-      background: rgba(42, 42, 42, 0.8);
-      color: #e0e0e0;
-      border: 1px solid #333;
-    }
-    input:focus {
-      outline: none;
-      border-color: #555;
-      background: rgba(42, 42, 42, 1);
-    }
-    button {
-      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-      color: white;
-      cursor: pointer;
-      border: 1px solid #7c3aed;
-      font-weight: 500;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
-    }
-    button:hover {
-      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-      border-color: #8b5cf6;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
-      transform: translateY(-1px);
-    }
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'Noto Sans JP', 'sans-serif'],
+                        display: ['Rajdhani', 'Noto Sans JP', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            purple: '#9333ea', 
+                            red: '#dc2626',    
+                            accent: '#f43f5e'  
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
-    section p {
-      margin-bottom: 1rem;
-      color: rgb(165, 164, 164);
-    }
-  </style>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #471923; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7f1d1d; 
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .glass-card {
+            background: linear-gradient(145deg, rgba(30, 10, 15, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(220, 38, 38, 0.5); 
+            box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.2);
+        }
+
+        .glass-card-locked {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+            backdrop-filter: blur(5px);
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #ef4444, #a855f7); 
+            -webkit-background-clip: text;
+            background-clip: text; /* Added standard property */
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Selection color */
+        ::selection {
+            background: #dc2626;
+            color: white;
+        }
+
+        /* Status Dot Animations */
+        .status-dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .status-online {
+            background-color: #22c55e;
+            box-shadow: 0 0 10px #22c55e;
+        }
+        .status-offline {
+            background-color: #ef4444;
+            box-shadow: 0 0 10px #ef4444;
+        }
+        .status-checking {
+            background-color: #eab308;
+            box-shadow: 0 0 10px #eab308;
+            animation: pulse 1s infinite;
+        }
+        
+        /* Lang Switcher */
+        .lang-btn {
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .lang-btn:hover, .lang-btn.active {
+            opacity: 1;
+            color: #f87171; /* Red-400 */
+            font-weight: bold;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>The Afterlife Official Page</h1>
-    <p>Your gateway to all our servers and services</p>
-  </header>
+<body class="bg-brand-dark text-slate-200 min-h-screen flex flex-col relative overflow-x-hidden">
 
-  <section>
-    <h2>Game Servers:</h2>
-    <div class="card">
-      <div style="text-align:center;">
-        Here can you see a list of all our game servers hosted by The Afterlife Network.
-      </div>
-      <div style="text-align:center; margin-top:20px;">
-        <button onclick="window.location.href='game_servers.html'">See the list here!</button>
-      </div>
+    <!-- Ambient Background Effects -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-purple rounded-full blur-[120px] opacity-20 animate-pulse-slow"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-red rounded-full blur-[120px] opacity-20 animate-pulse-slow" style="animation-delay: 2s;"></div>
     </div>
-  </section>
 
-  <section>
-    <h2>Anime, Series, Movies & Manga Servers:</h2>
-    <div class="card">
-      <div style="text-align:center;">
-        See what animes, manga, series and movies are available in our collection.
-      </div>
-      <div style="text-align:center; margin-top:20px;">
-        <button onclick="window.location.href='multimedia_server.html'">Check it here!</button>
-      </div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-ghost text-2xl text-red-500"></i>
+                    <span class="font-display font-bold text-xl tracking-wider text-white">THE AFTERLIFE <span class="text-red-500">NETWORK</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <div class="flex items-baseline space-x-4">
+                        <a href="#services" class="hover:text-red-400 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.services">Services</a>
+                        <a href="#showcase" class="hover:text-red-400 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.showcase">Library</a>
+                        <a href="#gaming" class="hover:text-red-400 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.expansions">Expansions</a>
+                        <a href="#knowledge-base" class="hover:text-red-400 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.guides">Guides</a>
+                        <a href="#status" class="hover:text-red-400 px-3 py-2 rounded-md text-sm font-medium transition-colors" data-i18n="nav.status">Status</a>
+                    </div>
+                    <!-- Language Switcher -->
+                    <div class="flex items-center gap-2 border-l border-white/10 pl-6">
+                        <i class="fa-solid fa-globe text-slate-500 text-sm"></i>
+                        <button onclick="changeLanguage('en')" class="lang-btn text-xs uppercase" id="btn-en">EN</button>
+                        <button onclick="changeLanguage('es')" class="lang-btn text-xs uppercase" id="btn-es">ES</button>
+                        <button onclick="changeLanguage('ja')" class="lang-btn text-xs uppercase" id="btn-ja">JP</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 text-center relative">
+        <div class="max-w-4xl mx-auto animate-float">
+            <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 tracking-tight">
+                <span data-i18n="hero.welcome">Welcome to the</span> <br/>
+                <span class="gradient-text" data-i18n="hero.digital_afterlife">Digital Afterlife</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="hero.subtitle">
+                Your private gateway to music, movies, and media. 
+                Hosted locally, available globally.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="px-8 py-3 bg-red-600 hover:bg-red-500 text-white rounded-lg font-semibold transition-all shadow-lg shadow-red-500/20 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-server"></i> <span data-i18n="hero.btn_access">Access Services</span>
+                </a>
+                <a href="#knowledge-base" class="px-8 py-3 glass-panel hover:bg-white/10 text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-book-open-reader"></i> <span data-i18n="hero.btn_guides">Setup Guides</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <main id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-3xl font-display font-bold mb-8 border-l-4 border-red-500 pl-4" data-i18n="titles.active_nodes">Active Nodes</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Jellyfin Card -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-purple-600 rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                
+                <div class="flex items-center gap-4 mb-4 z-10">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-700 to-red-600 flex items-center justify-center text-white text-xl shadow-lg">
+                        <i class="fa-solid fa-film"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Jellyfin</h3>
+                        <p class="text-xs text-purple-400 font-mono" data-i18n="cards.jellyfin.type">MEDIA SERVER</p>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-sm mb-6 flex-grow z-10" data-i18n="cards.jellyfin.desc">
+                    Stream movies, TV shows, and live TV. Better than Netflix because you own the data. 
+                    Resume playback across all devices.
+                </p>
+
+                <div class="space-y-3 z-10">
+                    <!-- URL Copy -->
+                    <div class="relative">
+                        <label class="text-xs text-slate-500 uppercase font-bold ml-1" data-i18n="labels.server_url">Server URL</label>
+                        <div class="flex items-center bg-slate-900/50 rounded-lg border border-slate-700 p-2 mt-1">
+                            <code class="text-sm text-red-300 flex-grow truncate px-2" id="jelly-url">http://theafterlifenetwork.serveminecraft.net:8097</code>
+                            <button onclick="copyToClipboard('jelly-url')" class="p-2 hover:bg-slate-700 rounded-md transition-colors text-slate-400 hover:text-white" title="Copy URL">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Client Links -->
+                    <div class="pt-4 border-t border-slate-700/50">
+                        <p class="text-xs text-slate-500 mb-2 font-bold uppercase" data-i18n="labels.clients">Recommended Clients</p>
+                        
+                        <!-- Row 1: Mobile -->
+                        <div class="flex gap-2 mb-2">
+                            <a href="https://apps.apple.com/us/app/swiftfin/id1604098728" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700">
+                                <i class="fa-brands fa-apple mr-1"></i> iOS
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=org.jellyfin.mobile" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700">
+                                <i class="fa-brands fa-android mr-1"></i> Android
+                            </a>
+                        </div>
+                        
+                        <!-- Row 2: Desktop -->
+                        <a href="https://github.com/jellyfin/jellyfin-media-player/releases" target="_blank" class="block w-full bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700">
+                            <i class="fa-brands fa-windows mr-1"></i> Windows (Media Player)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navidrome Card -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-red-600 rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                
+                <div class="flex items-center gap-4 mb-4 z-10">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-red-600 to-rose-500 flex items-center justify-center text-white text-xl shadow-lg">
+                        <i class="fa-solid fa-music"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Navidrome</h3>
+                        <p class="text-xs text-red-400 font-mono" data-i18n="cards.navidrome.type">MUSIC STREAMER</p>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-sm mb-6 flex-grow z-10" data-i18n="cards.navidrome.desc">
+                    High-definition audio streaming. Compatible with any "Subsonic" player. 
+                    Create playlists, download for offline, and scrobble.
+                </p>
+
+                <div class="space-y-3 z-10">
+                    <!-- URL Copy -->
+                    <div class="relative">
+                        <label class="text-xs text-slate-500 uppercase font-bold ml-1" data-i18n="labels.server_url">Server URL</label>
+                        <div class="flex items-center bg-slate-900/50 rounded-lg border border-slate-700 p-2 mt-1">
+                            <code class="text-sm text-red-300 flex-grow truncate px-2" id="navi-url">http://theafterlifenetwork.serveminecraft.net:4533</code>
+                            <button onclick="copyToClipboard('navi-url')" class="p-2 hover:bg-slate-700 rounded-md transition-colors text-slate-400 hover:text-white" title="Copy URL">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Client Links -->
+                    <div class="pt-4 border-t border-slate-700/50">
+                        <p class="text-xs text-slate-500 mb-2 font-bold uppercase" data-i18n="labels.clients">Recommended Clients</p>
+                        
+                        <!-- Row 1: Mobile -->
+                        <div class="flex gap-2 mb-2">
+                            <a href="https://testflight.apple.com/join/LDWqgjAs" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700">
+                                <i class="fa-brands fa-apple mr-1"></i> iOS
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.sumsg.musichub" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700">
+                                <i class="fa-brands fa-android mr-1"></i> Android
+                            </a>
+                        </div>
+                        
+                        <!-- Row 2: Desktop -->
+                        <a href="https://github.com/jeffvli/feishin/releases" target="_blank" class="block w-full bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700">
+                            <i class="fa-brands fa-windows mr-1"></i> Windows (Feishin)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Komga Card -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-teal-600 rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                
+                <div class="flex items-center gap-4 mb-4 z-10">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-600 to-cyan-500 flex items-center justify-center text-white text-xl shadow-lg">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">Komga</h3>
+                        <p class="text-xs text-teal-400 font-mono" data-i18n="cards.komga.type">COMICS & MANGA</p>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-sm mb-6 flex-grow z-10" data-i18n="cards.komga.desc">
+                    Read manga, comics, and ebooks in your browser or through dedicated reader apps. Syncs reading progress across devices.
+                </p>
+
+                <div class="space-y-3 z-10">
+                    <!-- URL Copy -->
+                    <div class="relative">
+                        <label class="text-xs text-slate-500 uppercase font-bold ml-1" data-i18n="labels.server_url">Server URL</label>
+                        <div class="flex items-center bg-slate-900/50 rounded-lg border border-slate-700 p-2 mt-1">
+                            <code class="text-sm text-red-300 flex-grow truncate px-2" id="komga-url">http://theafterlifenetwork.serveminecraft.net:25600</code>
+                            <button onclick="copyToClipboard('komga-url')" class="p-2 hover:bg-slate-700 rounded-md transition-colors text-slate-400 hover:text-white" title="Copy URL">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Client Links -->
+                    <div class="pt-4 border-t border-slate-700/50">
+                        <p class="text-xs text-slate-500 mb-2 font-bold uppercase" data-i18n="labels.clients">Recommended Clients</p>
+                        
+                        <div class="flex gap-2">
+                            <a href="https://paperback.moe/" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700">
+                                <i class="fa-brands fa-apple mr-1"></i> iOS (Paperback)
+                            </a>
+                            <a href="https://mihon.app/" target="_blank" class="flex-1 bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700">
+                                <i class="fa-brands fa-android mr-1"></i> Android (Mihon)
+                            </a>
+                        </div>
+                        
+                        <!-- Row 2: Web (NEW) -->
+                        <a href="http://theafterlifenetwork.serveminecraft.net:25600" target="_blank" class="block w-full bg-slate-800 hover:bg-slate-700 py-2 rounded text-center text-xs transition-colors border border-slate-700 mt-2">
+                            <i class="fa-solid fa-globe mr-1"></i> Web Reader (PC)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discord Card -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col h-full relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-600 rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                
+                <div class="flex items-center gap-4 mb-4 z-10">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center text-white text-xl shadow-lg">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white" data-i18n="cards.community.title">Community</h3>
+                        <p class="text-xs text-indigo-400 font-mono" data-i18n="cards.community.type">REQUESTS & CHAT</p>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-sm mb-6 flex-grow z-10" data-i18n="cards.community.desc">
+                    Join our Discord server to request new movies/shows, report issues, or chat with other members of The Afterlife Network.
+                </p>
+
+                <div class="mt-auto z-10">
+                    <a href="https://discord.gg/placeholder" target="_blank" class="block w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white text-center rounded-lg font-semibold transition-colors shadow-lg shadow-indigo-600/20">
+                        <i class="fa-brands fa-discord mr-2"></i> <span data-i18n="cards.community.btn">Join Server</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NEW: Horizontal Library Statistics Section -->
+        <section id="showcase" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-slate-800">
+            <h2 class="text-3xl font-display font-bold mb-8 border-l-4 border-amber-500 pl-4">
+                <i class="fa-solid fa-chart-pie text-amber-500 mr-2"></i> <span data-i18n="titles.stats">Network Statistics</span>
+            </h2>
+
+            <div class="space-y-6">
+                <!-- Video Library Stats (Horizontal) -->
+                <div class="glass-card rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 border-l-4 border-purple-500">
+                    <div class="flex items-center gap-4 min-w-[200px] w-full md:w-auto">
+                        <div class="w-14 h-14 rounded-full bg-purple-600/20 flex items-center justify-center text-purple-500 text-2xl shadow-[0_0_15px_rgba(147,51,234,0.3)]">
+                            <i class="fa-solid fa-film"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white" data-i18n="stats.video_title">Video Library</h3>
+                            <p class="text-xs text-slate-400 font-mono tracking-wider">JELLYFIN</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-around md:justify-end gap-8 flex-grow w-full md:w-auto">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">73</div>
+                            <div class="text-xs uppercase text-slate-500 font-bold" data-i18n="stats.movies">Movies</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">204</div>
+                            <div class="text-xs uppercase text-slate-500 font-bold" data-i18n="stats.series">TV Series</div>
+                        </div>
+                        <!-- NEW: Episodes Stat -->
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">6993</div>
+                            <div class="text-xs uppercase text-slate-500 font-bold" data-i18n="stats.episodes">Episodes</div>
+                        </div>
+                        <div class="text-center min-w-[140px]">
+                            <div class="text-lg font-bold text-slate-200">5.7 TB <span class="text-sm text-slate-500">/ 8 TB</span></div>
+                            <div class="text-xs uppercase text-slate-500 font-bold mb-1" data-i18n="stats.capacity">Capacity</div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-purple-500 w-[71%] shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Audio Library Stats (Horizontal) -->
+                <div class="glass-card rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 border-l-4 border-red-500">
+                    <div class="flex items-center gap-4 min-w-[200px] w-full md:w-auto">
+                        <div class="w-14 h-14 rounded-full bg-red-600/20 flex items-center justify-center text-red-500 text-2xl shadow-[0_0_15px_rgba(220,38,38,0.3)]">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white" data-i18n="stats.music_title">Music Library</h3>
+                            <p class="text-xs text-slate-400 font-mono tracking-wider">NAVIDROME</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-around md:justify-end gap-8 flex-grow w-full md:w-auto">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">24,111</div>
+                            <div class="text-xs uppercase text-slate-500 font-bold" data-i18n="stats.songs">Songs</div>
+                        </div>
+                        <div class="text-center min-w-[140px]">
+                            <div class="text-lg font-bold text-slate-200">150 GB <span class="text-sm text-slate-500">/ 1 TB</span></div>
+                            <div class="text-xs uppercase text-slate-500 font-bold mb-1" data-i18n="stats.capacity">Capacity</div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-red-500 w-[15%] shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reading Library Stats (Horizontal) -->
+                <div class="glass-card rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 border-l-4 border-teal-500">
+                    <div class="flex items-center gap-4 min-w-[200px] w-full md:w-auto">
+                        <div class="w-14 h-14 rounded-full bg-teal-600/20 flex items-center justify-center text-teal-500 text-2xl shadow-[0_0_15px_rgba(20,184,166,0.3)]">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white" data-i18n="stats.books_title">Reading Library</h3>
+                            <p class="text-xs text-slate-400 font-mono tracking-wider">KOMGA</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap justify-around md:justify-end gap-8 flex-grow w-full md:w-auto">
+                        <!-- NEW: Series Stat -->
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">7</div>
+                            <div class="text-xs uppercase text-slate-500 font-bold" data-i18n="stats.book_series">Series</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">105</div>
+                            <div class="text-xs uppercase text-slate-500 font-bold" data-i18n="stats.books">Books</div>
+                        </div>
+                        <div class="text-center min-w-[140px]">
+                            <div class="text-lg font-bold text-slate-200">7 GB <span class="text-sm text-slate-500">/ 1 TB</span></div>
+                            <div class="text-xs uppercase text-slate-500 font-bold mb-1" data-i18n="stats.capacity">Capacity</div>
+                            <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-teal-500 w-[1%] shadow-[0_0_10px_rgba(20,184,166,0.5)]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Expansions Section -->
+        <div id="gaming" class="mt-16 pt-8 border-t border-slate-800">
+            <h2 class="text-2xl font-display font-bold mb-8 flex items-center gap-3 text-slate-400">
+                <i class="fa-solid fa-microchip"></i> <span data-i18n="titles.expansions">Future Expansions</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Game Servers Placeholder -->
+                <div class="glass-card-locked rounded-xl p-6 flex items-center gap-6 relative overflow-hidden">
+                    <div class="w-14 h-14 rounded-lg bg-slate-800 flex items-center justify-center text-slate-500 text-2xl">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <h3 class="text-lg font-bold text-slate-300" data-i18n="cards.games.title">Game Servers</h3>
+                            <!-- CHANGED TO BETA -->
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-orange-500/20 text-orange-300 border border-orange-500/20 px-2 py-1 rounded">BETA</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="cards.games.desc">Private hosting for Minecraft, Palworld, and more.</p>
+                    </div>
+                </div>
+
+                <!-- AI Services Placeholder -->
+                <div class="glass-card-locked rounded-xl p-6 flex items-center gap-6 relative overflow-hidden">
+                    <div class="w-14 h-14 rounded-lg bg-slate-800 flex items-center justify-center text-slate-500 text-2xl">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <h3 class="text-lg font-bold text-slate-300" data-i18n="cards.ai.title">AI Lab</h3>
+                            <!-- CHANGED TO BETA -->
+                            <span class="text-[10px] uppercase font-bold tracking-wider bg-orange-500/20 text-orange-300 border border-orange-500/20 px-2 py-1 rounded">BETA</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mt-1" data-i18n="cards.ai.desc">Hosted LLMs and Image Generation tools.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- System Status Section -->
+        <div id="status" class="max-w-4xl mx-auto px-4 mt-24 mb-16">
+             <div class="glass-panel rounded-xl p-6 border border-slate-700/50">
+                 <div class="flex items-center justify-between mb-6">
+                     <h2 class="text-xl font-display font-bold text-white flex items-center gap-2">
+                         <i class="fa-solid fa-tower-broadcast text-red-500"></i> <span data-i18n="titles.status">System Status</span>
+                     </h2>
+                     <span class="text-xs text-slate-500 font-mono" id="last-updated">Last Updated: Just now</span>
+                 </div>
+
+                 <div class="space-y-4">
+                     <!-- Service 1 -->
+                     <div class="flex items-center justify-between p-3 rounded-lg bg-slate-900/30 border border-slate-800">
+                         <div class="flex items-center gap-3">
+                             <div id="status-dot-jellyfin" class="status-dot status-checking"></div>
+                             <span class="font-semibold text-sm">Jellyfin Media</span>
+                         </div>
+                         <div class="flex items-center gap-4">
+                             <span id="ping-jellyfin" class="text-xs font-mono text-slate-400">Checking...</span>
+                         </div>
+                     </div>
+
+                     <!-- Service 2 -->
+                     <div class="flex items-center justify-between p-3 rounded-lg bg-slate-900/30 border border-slate-800">
+                         <div class="flex items-center gap-3">
+                             <div id="status-dot-navidrome" class="status-dot status-checking"></div>
+                             <span class="font-semibold text-sm">Navidrome Music</span>
+                         </div>
+                         <div class="flex items-center gap-4">
+                             <span id="ping-navidrome" class="text-xs font-mono text-slate-400">Checking...</span>
+                         </div>
+                     </div>
+
+                     <!-- Service 3 (Komga) -->
+                     <div class="flex items-center justify-between p-3 rounded-lg bg-slate-900/30 border border-slate-800">
+                         <div class="flex items-center gap-3">
+                             <div id="status-dot-komga" class="status-dot status-checking"></div>
+                             <span class="font-semibold text-sm">Komga Manga</span>
+                         </div>
+                         <div class="flex items-center gap-4">
+                             <span id="ping-komga" class="text-xs font-mono text-slate-400">Checking...</span>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div id="knowledge-base" class="max-w-4xl mx-auto px-4">
+             <h2 class="text-3xl font-display font-bold mb-8 border-l-4 border-red-500 pl-4" data-i18n="titles.guides">Protocol & Guides</h2>
+             
+             <div class="space-y-4">
+                 
+                 <!-- General Login -->
+                 <div class="glass-panel rounded-xl overflow-hidden">
+                     <button class="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none group" onclick="toggleAccordion('faq1')">
+                         <span class="font-semibold text-lg flex items-center gap-2"><i class="fa-solid fa-key text-red-500"></i> <span data-i18n="guides.login.title">General Login Protocol</span></span>
+                         <i class="fa-solid fa-chevron-down text-slate-400 transition-transform" id="icon-faq1"></i>
+                     </button>
+                     <div id="faq1" class="hidden px-6 pb-6 text-slate-400 border-t border-slate-700/50 pt-4" data-i18n="guides.login.content">
+                         <p>Access is invite-only. If you have received an invite code via email or Discord:</p>
+                         <ol class="list-decimal list-inside mt-2 space-y-2 ml-2">
+                             <li>Enter the username provided in your invite.</li>
+                             <li>Use the temporary password provided in the discord channel.</li>
+                             <li>You will be prompted to change it immediately upon first login.</li>
+                         </ol>
+                     </div>
+                 </div>
+
+                 <!-- Jellyfin Setup -->
+                 <div class="glass-panel rounded-xl overflow-hidden">
+                     <button class="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none group" onclick="toggleAccordion('guide-jelly')">
+                         <span class="font-semibold text-lg flex items-center gap-2"><i class="fa-solid fa-film text-purple-500"></i> <span data-i18n="guides.jelly.title">Jellyfin Setup Guide</span></span>
+                         <i class="fa-solid fa-chevron-down text-slate-400 transition-transform" id="icon-guide-jelly"></i>
+                     </button>
+                     <div id="guide-jelly" class="hidden px-6 pb-6 text-slate-400 border-t border-slate-700/50 pt-4" data-i18n="guides.jelly.content">
+                         <ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Download Client:</strong> Use Swiftfin (iOS), Jellyfin (Android), or Jellyfin Media Player (Windows).</li>
+                             <li><strong>Add Server:</strong> When asked for the server address, type: <br> <code class="bg-slate-900 px-2 py-1 rounded text-purple-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:8097</code></li>
+                             <li><strong>Connect:</strong> Click connect, then enter your Username and Password.</li>
+                         </ol>
+                     </div>
+                 </div>
+
+                 <!-- Navidrome Setup -->
+                 <div class="glass-panel rounded-xl overflow-hidden">
+                     <button class="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none group" onclick="toggleAccordion('guide-navi')">
+                         <span class="font-semibold text-lg flex items-center gap-2"><i class="fa-solid fa-music text-red-500"></i> <span data-i18n="guides.navi.title">Navidrome Setup Guide</span></span>
+                         <i class="fa-solid fa-chevron-down text-slate-400 transition-transform" id="icon-guide-navi"></i>
+                     </button>
+                     <div id="guide-navi" class="hidden px-6 pb-6 text-slate-400 border-t border-slate-700/50 pt-4" data-i18n="guides.navi.content">
+                         <ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Download Client:</strong> Use Arpeggi (iOS), Amcfy (Android), or Feishin (Windows).</li>
+                             <li><strong>Server Type:</strong> If asked, select <strong>Subsonic</strong> or <strong>OpenSubsonic</strong>.</li>
+                             <li><strong>Server URL:</strong> Enter the following URL: <br> <code class="bg-slate-900 px-2 py-1 rounded text-red-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:4533</code></li>
+                             <li><strong>Legacy Auth:</strong> If using an older app that fails to login, enable "Legacy Authentication" in the web settings.</li>
+                         </ol>
+                     </div>
+                 </div>
+
+                 <!-- Komga Setup -->
+                 <div class="glass-panel rounded-xl overflow-hidden">
+                     <button class="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none group" onclick="toggleAccordion('guide-komga')">
+                         <span class="font-semibold text-lg flex items-center gap-2"><i class="fa-solid fa-book-open text-teal-500"></i> <span data-i18n="guides.komga.title">Komga Setup Guide</span></span>
+                         <i class="fa-solid fa-chevron-down text-slate-400 transition-transform" id="icon-guide-komga"></i>
+                     </button>
+                     <div id="guide-komga" class="hidden px-6 pb-6 text-slate-400 border-t border-slate-700/50 pt-4" data-i18n="guides.komga.content">
+                         <ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Download Client:</strong> Use Paperback (iOS) or Mihon (Android).</li>
+                             <li><strong>Install Extension (Mihon):</strong> Ve a Navegar -> Extensiones -> Instalar "Komga".</li>
+                             <li><strong>Configure:</strong> Go to Sources -> Komga -> Settings (Gear Icon) -> Edit Server.</li>
+                             <li><strong>Server URL:</strong> <br> <code class="bg-slate-900 px-2 py-1 rounded text-teal-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:25600</code></li>
+                             <li><strong>Login:</strong> Enter your credentials.</li>
+                         </ol>
+                     </div>
+                 </div>
+
+             </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-panel mt-16 py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center gap-6 mb-4">
+                <a href="#" class="text-slate-500 hover:text-red-400 text-2xl transition-colors"><i class="fa-brands fa-discord"></i></a>
+                <a href="#" class="text-slate-500 hover:text-red-400 text-2xl transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:admin@afterlife.net" class="text-slate-500 hover:text-red-400 text-2xl transition-colors"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="text-slate-600 text-sm">
+                &copy; 2024 The Afterlife Network. Private Community Server.
+            </p>
+            <p class="text-slate-700 text-xs mt-2">System Version 2.8.0 // Uptime: 99.9%</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification (Hidden by default) -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <div class="bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-3">
+            <i class="fa-solid fa-check-circle"></i>
+            <span>Copied to clipboard!</span>
+        </div>
     </div>
-  </section>
 
-  <section>
-    <h2>How to Access One of Our Services:</h2>
-    <div class="card">
-      <div style="text-align:center;">
-        See how to access our multimedia servers here!
-      </div>
-      <div style="text-align:center; margin-top:20px;">
-        <button onclick="window.location.href='server_list.html'">See here how!</button>
-      </div>
-    </div>
-  </section>
+    <!-- Scripts -->
+    <script>
+        // ------------------------------------------
+        // CONFIGURATION: UPDATE THESE URLS
+        // ------------------------------------------
+        const serverConfig = {
+            jellyfin: {
+                url: 'http://theafterlifenetwork.serveminecraft.net:8097',
+                iconPath: '/web/favicon.ico' 
+            },
+            navidrome: {
+                url: 'http://theafterlifenetwork.serveminecraft.net:4533',
+                iconPath: '/app/favicon.ico' 
+            },
+            komga: {
+                url: 'http://theafterlifenetwork.serveminecraft.net:25600',
+                iconPath: '/favicon.ico'
+            }
+        };
 
-  <section>
-    <h2>File Server:</h2>
-    <div class="card">
-      <div style="text-align:center;">
-        Explore what files we have to offer. From apps to learning tools and books!
-      </div>
-      <div style="text-align:center; margin-top:20px;">
-        <button onclick="window.open('http://theafterlifenetwork.serveminecraft.net:5000', '_blank')">Go now!</button>
-      </div>
-    </div>
-  </section>
+        // ------------------------------------------
+        // TRANSLATIONS CONFIGURATION
+        // ------------------------------------------
+        const translations = {
+            en: {
+                "nav.services": "Services",
+                "nav.showcase": "Library",
+                "nav.expansions": "Expansions",
+                "nav.guides": "Guides",
+                "nav.status": "Status",
+                "hero.welcome": "Welcome to the",
+                "hero.digital_afterlife": "Digital Afterlife",
+                "hero.subtitle": "Your private gateway to music, movies, and media. Hosted locally, available globally.",
+                "hero.btn_access": "Access Services",
+                "hero.btn_guides": "Setup Guides",
+                "titles.active_nodes": "Active Nodes",
+                "titles.showcase": "Library Highlights",
+                "titles.stats": "Network Statistics",
+                "stats.video_title": "Video Library",
+                "stats.music_title": "Music Library",
+                "stats.books_title": "Reading Library",
+                "stats.movies": "Movies",
+                "stats.series": "TV Series",
+                "stats.episodes": "Episodes",
+                "stats.songs": "Songs",
+                "stats.books": "Books",
+                "stats.book_series": "Series",
+                "stats.capacity": "Storage",
+                "cards.jellyfin.type": "MEDIA SERVER",
+                "cards.jellyfin.desc": "Stream movies, TV shows, and live TV. Better than Netflix because you own the data. Resume playback across all devices.",
+                "cards.navidrome.type": "MUSIC STREAMER",
+                "cards.navidrome.desc": "High-definition audio streaming. Compatible with any \"Subsonic\" player. Create playlists, download for offline, and scrobble.",
+                "cards.komga.type": "COMICS & MANGA",
+                "cards.komga.desc": "Read manga, comics, and ebooks in your browser or through dedicated reader apps. Syncs reading progress across devices.",
+                "cards.community.title": "Community",
+                "cards.community.type": "REQUESTS & CHAT",
+                "cards.community.desc": "Join our Discord server to request new movies/shows, report issues, or chat with other members of The Afterlife Network.",
+                "cards.community.btn": "Join Server",
+                "labels.server_url": "Server URL",
+                "labels.clients": "Recommended Clients",
+                "titles.expansions": "Future Expansions",
+                "cards.games.title": "Game Servers",
+                "cards.games.desc": "Private hosting for Minecraft, Palworld, and more.",
+                "cards.ai.title": "AI Lab",
+                "cards.ai.desc": "Hosted LLMs and Image Generation tools.",
+                "titles.status": "System Status",
+                "titles.guides": "Protocol & Guides",
+                "guides.login.title": "General Login Protocol",
+                "guides.login.content": `<p>Access is invite-only. If you have received an invite code via email or Discord:</p>
+                         <ol class="list-decimal list-inside mt-2 space-y-2 ml-2">
+                             <li>Enter the username provided in your invite.</li>
+                             <li>Use the temporary password provided in the discord channel.</li>
+                             <li>You will be prompted to change it immediately upon first login.</li>
+                         </ol>`,
+                "guides.jelly.title": "Jellyfin Setup Guide",
+                "guides.jelly.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Download Client:</strong> Use Swiftfin (iOS), Jellyfin (Android), or Jellyfin Media Player (Windows).</li>
+                             <li><strong>Add Server:</strong> When asked for the server address, type: <br> <code class="bg-slate-900 px-2 py-1 rounded text-purple-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:8097</code></li>
+                             <li><strong>Connect:</strong> Click connect, then enter your Username and Password.</li>
+                         </ol>`,
+                "guides.navi.title": "Navidrome Setup Guide",
+                "guides.navi.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Download Client:</strong> Use Arpeggi (iOS), Amcfy (Android), or Feishin (Windows).</li>
+                             <li><strong>Server Type:</strong> If asked, select <strong>Subsonic</strong> or <strong>OpenSubsonic</strong>.</li>
+                             <li><strong>Server URL:</strong> Enter the following URL: <br> <code class="bg-slate-900 px-2 py-1 rounded text-red-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:4533</code></li>
+                             <li><strong>Legacy Auth:</strong> If using an older app that fails to login, enable "Legacy Authentication" in the web settings.</li>
+                         </ol>`,
+                "guides.komga.title": "Komga Setup Guide",
+                "guides.komga.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Download Client:</strong> Use Paperback (iOS) or Mihon (Android).</li>
+                             <li><strong>Install Extension (Mihon):</strong> Go to Browse -> Extensions -> Install "Komga".</li>
+                             <li><strong>Configure:</strong> Go to Sources -> Komga -> Settings (Gear Icon) -> Edit Server.</li>
+                             <li><strong>Server URL:</strong> <br> <code class="bg-slate-900 px-2 py-1 rounded text-teal-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:25600</code></li>
+                             <li><strong>Login:</strong> Enter your credentials.</li>
+                         </ol>`
+            },
+            es: {
+                "nav.services": "Servicios",
+                "nav.showcase": "Biblioteca",
+                "nav.expansions": "Expansiones",
+                "nav.guides": "Guías",
+                "nav.status": "Estado",
+                "hero.welcome": "Bienvenido al",
+                "hero.digital_afterlife": "Afterlife Digital",
+                "hero.subtitle": "Tu puerta de acceso privada a música, películas y medios. Alojado localmente, disponible globalmente.",
+                "hero.btn_access": "Servicios",
+                "hero.btn_guides": "Guías de Configuración",
+                "titles.active_nodes": "Nodos Activos",
+                "titles.showcase": "Destacados de la Biblioteca",
+                "titles.stats": "Estadísticas de la Red",
+                "stats.video_title": "Biblioteca de Video",
+                "stats.music_title": "Biblioteca Musical",
+                "stats.books_title": "Biblioteca de Lectura",
+                "stats.movies": "Películas",
+                "stats.series": "Series TV",
+                "stats.episodes": "Episodios",
+                "stats.songs": "Canciones",
+                "stats.books": "Libros",
+                "stats.book_series": "Series",
+                "stats.storage": "Capacidad",
+                "cards.jellyfin.type": "SERVIDOR MEDIA",
+                "cards.jellyfin.desc": "Streaming de películas, series y TV en vivo. Mejor que Netflix porque eres dueño de los datos. Continúa la reproducción en todos tus dispositivos.",
+                "cards.navidrome.type": "STREAMER MÚSICA",
+                "cards.navidrome.desc": "Streaming de audio de alta definición. Compatible con cualquier reproductor \"Subsonic\". Crea listas, descarga offline y haz scrobbling.",
+                "cards.komga.type": "CÓMICS Y MANGA",
+                "cards.komga.desc": "Lee manga, cómics y libros en tu navegador o apps dedicadas. Sincroniza el progreso de lectura entre dispositivos.",
+                "cards.community.title": "Comunidad",
+                "cards.community.type": "PETICIONES Y CHAT",
+                "cards.community.desc": "Únete a nuestro Discord para pedir películas/series, reportar problemas o charlar con otros miembros de The Afterlife Network.",
+                "cards.community.btn": "Unirse al Servidor",
+                "labels.server_url": "URL del Servidor",
+                "labels.clients": "Clientes Recomendados",
+                "titles.expansions": "Futuras Expansiones",
+                "cards.games.title": "Servidores de Juego",
+                "cards.games.desc": "Alojamiento privado para Minecraft, Palworld y más.",
+                "cards.ai.title": "Laboratorio IA",
+                "cards.ai.desc": "LLMs alojados y herramientas de generación de imágenes.",
+                "titles.status": "Estado del Sistema",
+                "titles.guides": "Protocolo y Guías",
+                "guides.login.title": "Protocolo General de Login",
+                "guides.login.content": `<p>El acceso es solo por invitación. Si has recibido un código por email o Discord:</p>
+                         <ol class="list-decimal list-inside mt-2 space-y-2 ml-2">
+                             <li>Ingresa el usuario proporcionado en tu invitación.</li>
+                             <li>Usa la contraseña temporal proporcionada en el canal de discord.</li>
+                             <li>Se te pedirá que la cambies inmediatamente al primer inicio de sesión.</li>
+                         </ol>`,
+                "guides.jelly.title": "Guía Configuración Jellyfin",
+                "guides.jelly.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Descargar Cliente:</strong> Usa Swiftfin (iOS), Jellyfin (Android), o Jellyfin Media Player (Windows).</li>
+                             <li><strong>Añadir Servidor:</strong> Cuando pida la dirección, escribe: <br> <code class="bg-slate-900 px-2 py-1 rounded text-purple-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:8097</code></li>
+                             <li><strong>Conectar:</strong> Pulsa conectar, luego introduce tu Usuario y Contraseña.</li>
+                         </ol>`,
+                "guides.navi.title": "Guía Configuración Navidrome",
+                "guides.navi.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Descargar Cliente:</strong> Usa Arpeggi (iOS), Amcfy (Android), o Feishin (Windows).</li>
+                             <li><strong>Tipo de Servidor:</strong> Si pregunta, selecciona <strong>Subsonic</strong> o <strong>OpenSubsonic</strong>.</li>
+                             <li><strong>URL del Servidor:</strong> Introduce la siguiente URL: <br> <code class="bg-slate-900 px-2 py-1 rounded text-red-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:4533</code></li>
+                             <li><strong>Auth Legacy:</strong> Si usas una app antigua que falla al entrar, activa "Legacy Authentication" en la web.</li>
+                         </ol>`,
+                "guides.komga.title": "Guía Configuración Komga",
+                "guides.komga.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>Descargar Cliente:</strong> Usa Paperback (iOS) o Mihon (Android).</li>
+                             <li><strong>Instalar Extensión (Mihon):</strong> Ve a Navegar -> Extensiones -> Instalar "Komga".</li>
+                             <li><strong>Configurar:</strong> Ve a Fuentes -> Komga -> Ajustes (Icono Engranaje) -> Editar Servidor.</li>
+                             <li><strong>URL del Servidor:</strong> <br> <code class="bg-slate-900 px-2 py-1 rounded text-teal-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:25600</code></li>
+                             <li><strong>Login:</strong> Introduce tus credenciales.</li>
+                         </ol>`
+            },
+            ja: {
+                "nav.services": "サービス",
+                "nav.showcase": "ライブラリ",
+                "nav.expansions": "拡張機能",
+                "nav.guides": "ガイド",
+                "nav.status": "ステータス",
+                "hero.welcome": "ようこそ",
+                "hero.digital_afterlife": "デジタル・アフターライフへ",
+                "hero.subtitle": "音楽、映画、メディアへのプライベートゲートウェイ。ローカルホストで、世界中どこからでも。",
+                "hero.btn_access": "サービスへ",
+                "hero.btn_guides": "設定ガイド",
+                "titles.active_nodes": "アクティブノード",
+                "titles.showcase": "ライブラリのハイライト",
+                "titles.stats": "ネットワーク統計",
+                "stats.video_title": "ビデオライブラリ",
+                "stats.music_title": "音楽ライブラリ",
+                "stats.books_title": "読書ライブラリ",
+                "stats.movies": "映画",
+                "stats.series": "シリーズ",
+                "stats.episodes": "エピソード",
+                "stats.songs": "曲",
+                "stats.books": "本",
+                "stats.book_series": "シリーズ",
+                "stats.storage": "容量",
+                "cards.jellyfin.type": "メディアサーバー",
+                "cards.jellyfin.desc": "映画、テレビ番組、ライブTVをストリーミング。データはあなたのもの、Netflixより優れています。全デバイスで再生を再開。",
+                "cards.navidrome.type": "音楽ストリーマー",
+                "cards.navidrome.desc": "高音質オーディオストリーミング。「Subsonic」プレーヤーと互換性あり。プレイリスト作成、オフラインダウンロード、Scrobble対応。",
+                "cards.komga.type": "コミック＆マンガ",
+                "cards.komga.desc": "ブラウザや専用アプリでマンガ、コミック、電子書籍を閲覧。デバイス間で読書の進捗を同期。",
+                "cards.community.title": "コミュニティ",
+                "cards.community.type": "リクエスト＆チャット",
+                "cards.community.desc": "Discordサーバーに参加して、新しい映画/番組のリクエスト、問題の報告、または他のメンバーとのチャットを楽しみましょう。",
+                "cards.community.btn": "サーバーに参加",
+                "labels.server_url": "サーバーURL",
+                "labels.clients": "推奨クライアント",
+                "titles.expansions": "将来の拡張",
+                "cards.games.title": "ゲームサーバー",
+                "cards.games.desc": "Minecraft、Palworldなどのプライベートホスティング。",
+                "cards.ai.title": "AIラボ",
+                "cards.ai.desc": "ホストされたLLMと画像生成ツール。",
+                "titles.status": "システムステータス",
+                "titles.guides": "プロトコル＆ガイド",
+                "guides.login.title": "一般ログイン手順",
+                "guides.login.content": `<p>アクセスは招待制です。メールまたはDiscordで招待コードを受け取った場合：</p>
+                         <ol class="list-decimal list-inside mt-2 space-y-2 ml-2">
+                             <li>招待状に記載されているユーザー名を入力します。</li>
+                             <li>Discordチャンネルで提供された仮パスワードを使用してください。</li>
+                             <li>初回ログイン時にすぐに変更するように求められます。</li>
+                         </ol>`,
+                "guides.jelly.title": "Jellyfin設定ガイド",
+                "guides.jelly.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>クライアントをダウンロード:</strong> Swiftfin (iOS)、Jellyfin (Android)、または Jellyfin Media Player (Windows) を使用してください。</li>
+                             <li><strong>サーバーを追加:</strong> サーバーアドレスを求められたら、次のように入力します: <br> <code class="bg-slate-900 px-2 py-1 rounded text-purple-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:8097</code></li>
+                             <li><strong>接続:</strong> 接続をクリックし、ユーザー名とパスワードを入力します。</li>
+                         </ol>`,
+                "guides.navi.title": "Navidrome設定ガイド",
+                "guides.navi.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>クライアントをダウンロード:</strong> Arpeggi (iOS)、Amcfy (Android)、または Feishin (Windows) を使用してください。</li>
+                             <li><strong>サーバータイプ:</strong> 尋ねられた場合、<strong>Subsonic</strong> または <strong>OpenSubsonic</strong> を選択します。</li>
+                             <li><strong>サーバーURL:</strong> 次のURLを入力します: <br> <code class="bg-slate-900 px-2 py-1 rounded text-red-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:4533</code></li>
+                             <li><strong>レガシー認証:</strong> 古いアプリを使用していてログインに失敗する場合は、Web設定で「Legacy Authentication」を有効にしてください。</li>
+                         </ol>`,
+                "guides.komga.title": "Komga設定ガイド",
+                "guides.komga.content": `<ol class="list-decimal list-inside space-y-3">
+                             <li><strong>クライアントをダウンロード:</strong> Paperback (iOS) または Mihon (Android) を使用してください。</li>
+                             <li><strong>拡張機能をインストール (Mihon):</strong> 参照 -> 拡張機能 -> "Komga" をインストールします。</li>
+                             <li><strong>設定:</strong> ソース -> Komga -> 設定 (歯車アイコン) -> サーバーを編集。</li>
+                             <li><strong>サーバーURL:</strong> <br> <code class="bg-slate-900 px-2 py-1 rounded text-teal-400 mt-1 inline-block select-all">http://theafterlifenetwork.serveminecraft.net:25600</code></li>
+                             <li><strong>ログイン:</strong> 認証情報を入力します。</li>
+                         </ol>`
+            }
+        };
 
-  <section>
-    <h2>Discord Server:</h2>
-    <div class="card">
-      <div style="text-align:center;">
-        Wanna invite someone to the server? Use this link!
-      </div>
-      <div style="text-align:center; margin-top:20px; display:flexbox">
-        <button onclick="window.open('https://discord.gg/eyRjBxdAZ5', '_blank')">Open Link</button>
-        <button onclick="window.alert('Copy this link to invite someone else! \n\n\nhttps://discord.gg/eyRjBxdAZ5')">Show Link</button>
-      </div>
-    </div>
-  </section>
+        function changeLanguage(lang) {
+            // Update active state of buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
 
-  <section>
-    <h2>More Coming Soon</h2>
-    <p>We’re always expanding. Stay tuned for more services and features!</p>
-  </section>
+            // Save preference
+            localStorage.setItem('preferred_language', lang);
 
-  <footer>
-    © <span id="year"></span> The Afterlife Network. All rights reserved.<br>
-    <section>
-      <button onclick="window.location.href='index-es.html'">🇲🇽Español</button>
-      <button onclick="window.location.href='index-sv.html'">🇸🇪Svenska</button>
-      <button onclick="window.location.href='index-ja.html'">🇯🇵日本語</button>
-    </section>
-  </footer>
+            // Update text
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    // Check if content has HTML tags (simple check)
+                    if (translations[lang][key].includes('<')) {
+                        element.innerHTML = translations[lang][key];
+                    } else {
+                        element.innerText = translations[lang][key];
+                    }
+                }
+            });
+        }
 
-  <script>
-    // --- Footer Year ---
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+        // Initialize Language
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred_language');
+            const browserLang = navigator.language.slice(0, 2);
+            // Default to saved, then browser if supported, else en
+            let defaultLang = 'en';
+            if (savedLang && translations[savedLang]) {
+                defaultLang = savedLang;
+            } else if (translations[browserLang]) {
+                defaultLang = browserLang;
+            }
+            changeLanguage(defaultLang);
+        });
+
+        // Copy functionality
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            
+            // Modern Clipboard API
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(showToast);
+            } else {
+                // Fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast();
+            }
+        }
+
+        // Toast Notification Logic
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Accordion Logic
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (content.classList.contains('hidden')) {
+                // Close others (Optional)
+                document.querySelectorAll('[id^="faq"], [id^="guide"]').forEach(el => {
+                   if(el.id !== id) el.classList.add('hidden'); 
+                });
+                document.querySelectorAll('[id^="icon-faq"], [id^="icon-guide"]').forEach(el => {
+                   if(el.id !== 'icon-' + id) el.style.transform = 'rotate(0deg)'; 
+                });
+
+                // Open current
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                // Close current
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // ------------------------------------------
+        // REAL STATUS CHECKER (IMAGE BEACON METHOD)
+        // ------------------------------------------
+        function checkService(serviceKey) {
+            const config = serverConfig[serviceKey];
+            const dot = document.getElementById(`status-dot-${serviceKey}`);
+            const pingText = document.getElementById(`ping-${serviceKey}`);
+            
+            // Skip if element doesn't exist (in case we removed a row)
+            if(!dot) return;
+
+            const startTime = Date.now();
+            const img = new Image();
+
+            img.onload = function() {
+                const endTime = Date.now();
+                const latency = endTime - startTime;
+                
+                dot.className = 'status-dot status-online';
+                pingText.innerText = `Online (${latency}ms)`;
+                pingText.className = 'text-xs font-mono text-green-400';
+            };
+
+            img.onerror = function() {
+                dot.className = 'status-dot status-offline';
+                pingText.innerText = 'Offline / Blocked';
+                pingText.className = 'text-xs font-mono text-red-400';
+            };
+
+            // We append a timestamp to force the browser to actually check the network
+            // instead of using a cached image.
+            img.src = config.url + config.iconPath + '?t=' + startTime;
+        }
+
+        function runAllChecks() {
+            Object.keys(serverConfig).forEach(key => checkService(key));
+            
+            const now = new Date();
+            const timeSpan = document.getElementById('last-updated');
+            if(timeSpan) timeSpan.innerText = `Last Updated: ${now.toLocaleTimeString()}`;
+        }
+
+        // Run on load
+        window.addEventListener('load', runAllChecks);
+
+        // Re-check every 60 seconds
+        setInterval(runAllChecks, 60000);
+
+    </script>
 </body>
 </html>
